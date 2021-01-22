@@ -9,7 +9,6 @@ class Timer extends React.Component{
       }
 
                   componentDidMount() {
-                  console.log("componentDidMount ()");
                   this.setState({
                   intervall: setInterval(
                   () => this.setState({ timer: this.state.timer + 1 }),
@@ -25,14 +24,32 @@ class Timer extends React.Component{
             
 
             return(
-      
-            <div id="counter">
-                  <div id="counter-number">{this.state.timer}       
+                  <div className="flex">
+                        <div id="counter">
+                        <div id="counter-number">{Math.floor((this.state.timer / 3600) )}       
+                        </div>
+                        <svg>
+                        <circle r="18" cx="20" cy="20"></circle>
+                        </svg>
+                        </div>
+                        <div id="counter">
+                        <div id="counter-number">{Math.floor((this.state.timer % 3600) / 60)}       
+                        </div>
+                        <svg>
+                        <circle r="18" cx="20" cy="20"></circle>
+                        </svg>
+                        </div>
+                        
+
+                        <div id="counter">
+                        <div id="counter-number">{Math.floor((this.state.timer % 3600) % 60)}       
+                        </div>
+                        <svg>
+                        <circle r="18" cx="20" cy="20"></circle>
+                              </svg>
+                              
+                              </div>
                   </div>
-                  <svg>
-                  <circle r="18" cx="20" cy="20"></circle>
-                  </svg>
-            </div>
             )
       
       }
