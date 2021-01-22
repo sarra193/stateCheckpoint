@@ -11,19 +11,7 @@ const Footer = () => {
       <Card.Text>
                         
             </Card.Text>
-      <div style={{display:'flex',flexWrap:'wrap',flex: '1', justifyContent: 'space-around'}}>
-      <IconContext.Provider value={{ style: {fontSize: '30px', color: "rgb(0, 123, 255)"}}}>
-            <FaTwitter />
-      </IconContext.Provider> 
-
-      <IconContext.Provider value={{ style: {fontSize: '30px', color: "rgb(0, 123, 255)"}}}>  
-            < FaFacebook/>
-      </IconContext.Provider> 
-                              
-      <IconContext.Provider value={{ style: {fontSize: '30px', color: "black"}}}>
-            < FaGithub/>
-      </IconContext.Provider>
-      </div> 
+      
                         
       </Card.Body>
       </Card>

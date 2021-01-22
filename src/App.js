@@ -1,6 +1,8 @@
 import './App.css';
 import React from 'react'
 import NavBar from './Components/NavBar/NavBar'
+import Timer from './Components/Timer/Timer'
+import Footer from './Components/Footer/Footer'
 class App extends React.Component{
   
     state = {
@@ -10,26 +12,13 @@ class App extends React.Component{
             profession: "ingenieur Informatique: genie logiciel",
             photo:"https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=976&q=80",
             isShow: false,
-            timer: 0,
+            
     }
           
           
-  componentDidMount() {
-                            console.log("componentDidMount ()");
 
-            this.setState({
-              timer: setInterval(
-            () => this.setState({ timer: this.state.timer + 1 }),
-              1000
-              ),
-            });
-            }
               
               
-              componentWillUnmount() {
-              console.log("Component Will Unmount ()");
-            clearInterval(this.state.intervall);
-            }
   render() {
 
     return (
@@ -53,13 +42,8 @@ class App extends React.Component{
           
           <div>
           {/* counter */}
-          <div id="counter">
-            <div id="counter-number">{this.state.timer}       
-            </div>
-            <svg>
-              <circle r="18" cx="20" cy="20"></circle>
-            </svg>
-          </div>
+
+          <Timer/>
 
           {/* profile card  */}
             <div className="card mb-3 " style={{ margin: "150px 250px 200px 250px" }}>
@@ -85,7 +69,8 @@ class App extends React.Component{
             </div>
             </div>
           }
-          </div>
+        </div>
+        <Footer/>
     </div>
   );
   }
